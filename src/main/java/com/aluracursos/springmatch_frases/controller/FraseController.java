@@ -11,16 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class FraseController {
 
     @Autowired
-    private FraseRepository repository;
-
-    @Autowired
-    FraseService servicio;
+    private FraseService servicio;
 
     @GetMapping("/series/frases")
     public FraseDTO obtenerFraseAleatoria(){
-        return servicio.obtenerFraseAleatoria(){
-            return repository.ObtenerFraseAleatoria();
-        }
-
+        return servicio.obtenerFraseAleatoria();
     }
 }
