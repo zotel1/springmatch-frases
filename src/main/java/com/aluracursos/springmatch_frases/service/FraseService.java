@@ -3,9 +3,14 @@ package com.aluracursos.springmatch_frases.service;
 import com.aluracursos.springmatch_frases.controller.FraseController;
 import com.aluracursos.springmatch_frases.dto.FraseDTO;
 import com.aluracursos.springmatch_frases.model.Frase;
+import com.aluracursos.springmatch_frases.repository.FraseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class FraseService {
-    private FraseController repository;
-    Frase frase = repository.obtenerFraseAleatoria();
-    return new FraseDTO(frase.getTitulo(), frase.getFrase(), frase.)
+    @Autowired
+    private FraseRepository repository;
+    public FraseDTO obtenerFraseAleatoria() {
+        Frase frase = repository.obtenerFraseAleatoria();
+        return new FraseDTO(frase.getTitulo(), frase.getFrase(), frase.getPersonaje(), frase.getPoster());
+    }
 }
